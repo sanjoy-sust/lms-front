@@ -1,0 +1,105 @@
+/* You can add global styles to this file, and also import other style files */
+
+html{
+  height: 100%;
+}
+
+body{
+  height: 100%;
+}
+.container-fluid{
+  height:100%;
+}
+.row{
+  height: 100%;
+}
+.navbar{
+    height:40px;
+}
+
+li{
+  list-style:none;
+  overflow: hidden;
+}
+.fa-star{
+    color: #ffeb00;
+}
+.fa-comments{
+  color: #0daa20;
+}
+.fa-file{
+  color: #fff;
+}
+.navbar-nav{
+  margin-left: 78px;
+  
+}
+.navbar>a{
+  color: #fff;
+}
+.navbar-collapse{
+  background: #dc3545;
+  color: #fff;
+}
+.nav-select{
+  height: 24px;
+  margin: auto;
+}
+.side-nav{
+
+  background: #fff;
+  border-right: 4px solid #dcd0d0;
+}
+.side-nav>ul>li{
+  background: #dc3545;
+  margin: 9px;
+  margin-left: -54px;
+  margin-right: -14px;
+  padding: inherit;
+}
+.side-nav>ul>li>a{
+  color: #fff;
+  text-decoration: none;
+}
+.fa-angle-double-down{
+  color: #fff;
+  float: right;
+  padding: 5px;
+}
+.side-nav>ul>li>ul{
+  background: #fff;
+  margin: 9px;
+  margin-left: -79px;
+  margin-right: -14px;
+  padding: inherit;
+}
+.side-nav>ul>li>ul>li{
+  border-bottom: 1px solid  #0000003d;
+  padding: inherit;
+}
+.nav-tabs{
+    margin-top: 15px;
+}
+.side-nav>ul>li>ul>li>a{
+  color:black;
+  text-decoration: none
+}
+.nav-tabs>li>a{
+  margin:3px;
+  padding: 5px 15px 0px 15px;
+  color: black;
+  background-image: linear-gradient( white,#ff000057);
+}
+.nav-tabs>li>.active{
+  background-image: linear-gradient( #ff000057,white);
+}
+footer{
+  height:34px;
+  background: #dc3545;
+  color:white;
+  padding:5px;
+}
+footer>.row>.col-md-9>p>a{
+  color: #fff;
+  text-decoration: none;
+}
