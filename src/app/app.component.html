@@ -1,16 +1,16 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<nav class="navbar navbar-expand-lg navbar-dark bg-danger">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a href="#" class="nav-item nav-link">Current Academic Year:2012-2013</a>
     <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
         <div class="navbar-nav ml-auto">
-           <a href="#" class="nav-item nav-link active"><span class="fa fa-star"></span>&nbsp;Dashboard</a>
+           <a href="#" class="nav-item nav-link active"><img src="../../../assets/image/star.png"/>Dashboard</a>
         </div>
         <div class="navbar-nav ">
-            <a href="#" class="nav-item nav-link"><span class="fa fa-comments"></span>&nbsp;Widget</a>
-            <a href="#" class="nav-item nav-link"><span class="fa fa-file"></span>&nbsp;Options</a>
+            <a href="#" class="nav-item nav-link"><img src="../../../assets/image/thought.png"/>Widget</a>
+            <a href="#" class="nav-item nav-link"><img src="../../../assets/image/Payment_details.gif"/>Options</a>
           </div>
           <div class="navbar-nav">
             <a href="#" class="nav-item nav-link">Academic Year View</a>
@@ -32,53 +32,53 @@
     <p style="text-align: right;font-family:fantasy;margin-top:-11px">Library Edition</p>
   </div>
   <ul>
-    <li (click)="toggleEdit()"><a href="#">Home</a><i class="fa fa-angle-double-down"></i>
+    <li (click)="toggleEdit()"><a href="#">Admin Master</a><i class="fa fa-angle-double-down"></i>
          <ul *ngIf=isEdit>
-           <li><i class="fa fa-users fa-xs"></i>&nbsp;<a href="#">Staff</a></li>
+           <li><img  style="height:20px" src="../../../assets/image/teacher_icon.jpg"/><a href="#">Staff</a></li>
            <li><i class="fa fa-user fa-xs"></i>&nbsp;<a href="#">about</a></li>
            <!-- <li><a href="#">about</a></li>
            <li><a href="#">about</a></li> -->
 
          </ul>
     </li>
-    <li><a href="#">Home</a><i class="fa fa-angle-double-down"></i></li>
-    <li><a href="#">Home</a><i class="fa fa-angle-double-down"></i></li>
-    <li><a href="#">Home</a><i class="fa fa-angle-double-down"></i></li>
-    <li><a href="#">Home</a><i class="fa fa-angle-double-down"></i></li>
+    <li><a href="#">Library Master</a><i class="fa fa-angle-double-down"></i></li>
+    <li><a href="#">Student Information</a><i class="fa fa-angle-double-down"></i></li>
+    <li><a href="#">Masters</a><i class="fa fa-angle-double-down"></i></li>
+    <li><a href="#">Book Reports</a><i class="fa fa-angle-double-down"></i></li>
   </ul>
   <div class="container">
     <p style="font-family:Sofia">Developed By</p>
   </div>
 </div>
 
-<div class="col-md-10" style="text-align:center;height: 100%;">
-  <ul class="nav nav-tabs">
-    <li class="nav-item">
-      <a class="nav-link active" href="#">School Master</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Switch Academic Year</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Default Setting</a>
-    </li>
-  </ul>
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img src="../../../assets/image/lms_banner.jpg" height="139" width="362"/>
-  <router-outlet></router-outlet>
-</div>
-</div>
+ <div class="col-md-10" style="text-align:center;height:auto;">
+      <ul class="nav nav-tabs">
+            <li class="nav-item">
+              <a class="nav-link active" href="#">School Master</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Switch Academic Year</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Default Setting</a>
+            </li>
+      </ul>
+        <h1>
+          Welcome to {{ title }}!
+        </h1>
+        <img src="../../../assets/image/lms_banner.jpg" height="139" width="362"/>
+        <router-outlet></router-outlet>
+    </div>
+  </div>
 </div>
 <footer>
-     <div class="row">
-      <div class="col-md-3">
-      <p style="text-align: left;">User: Admin  :: &nbsp;&nbsp;{{now | date:'medium'}}</p>
+    <div class="row">
+        <div class="col-md-3">
+        <p style="text-align:left;margin: 6px 0px 0px 11px;">User: Admin  :: &nbsp;&nbsp;{{now | date:'medium'}}</p>
+        </div>
+        <div class="col-md-9">
+           <p style="margin: 6px 0px 0px 11px;">Copyright 2009-2012 MarvelSoft &nbsp;&nbsp; <a href="#">support.marvelsoft.co.in</a>&nbsp; <a href="#">www.marvelsoft.co.in</a> &nbsp;&nbsp; Helpline: +99-00-999 &nbsp;&nbsp; Version: 5.0.345</p>
+        </div>
       </div>
-      <div class="col-md-9">
-         <p>Copyright 2009-2012 MarvelSoft &nbsp;&nbsp; <a href="#">support.marvelsoft.co.in</a>&nbsp; <a href="#">www.marvelsoft.co.in</a> &nbsp;&nbsp; Helpline: +99-00-999 &nbsp;&nbsp; Version: 5.0.345</p>
-      </div>
-    </div>
 </footer>
 

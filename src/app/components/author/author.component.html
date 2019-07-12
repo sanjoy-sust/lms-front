@@ -1,13 +1,14 @@
-<div class="container-fluid">
+<div class="container">
 <h1>Author Add</h1>
-<form class="text-center border border-light p-5" [formGroup]="authorForm" (ngSubmit)="addAuthor()">
-  <div class="form-group h4 mb-4">
-    <input class="form-control mb-4" placeholder="First Name" formControlName="firstName"><br>
-    <input class="form-control mb-4" placeholder="Last Name" formControlName="lastName"><br>
-    <input class="form-control mb-4" placeholder="E-mail" formControlName="email"><br>
-    <input class="form-control mb-4" placeholder="Address" formControlName="address"><br>
-    <input class="form-control mb-4" placeholder="Type" formControlName="type"><br>
+<form class="" [formGroup]="authorForm" (ngSubmit)="addAuthor()">
+  <div class="form-group">
+    <input class="form-control form-control-sm" placeholder="First Name" formControlName="firstName">
+    <input class="form-control form-control-sm" placeholder="Last Name" formControlName="lastName">
+    <input class="form-control form-control-sm" placeholder="E-mail" formControlName="email">
+    <input class="form-control form-control-sm" placeholder="Address" formControlName="address">
+    <input class="form-control form-control-sm" placeholder="Type" formControlName="type">
   </div>
   <button  color="info" class="my-4" type="submit">Add</button>
 </form>
 </div>
+
