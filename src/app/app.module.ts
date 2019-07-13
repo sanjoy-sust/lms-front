@@ -10,6 +10,7 @@ import { AppRoutingModule } from './/app-routing.module';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { PublisherComponent } from './components/publisher/publisher.component';
 import { BookComponent } from './components/book/book.component';
+import { BookSelfComponent } from './components/book-self/book-self.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { BookComponent } from './components/book/book.component';
     AuthorComponent,
     HomeComponent,
     PublisherComponent,
-    BookComponent
+    BookComponent,
+    BookSelfComponent
   ],
   imports: [
     BrowserModule,
