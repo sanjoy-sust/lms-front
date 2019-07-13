@@ -1,24 +1,24 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a href="#" class="nav-item nav-link">Current Academic Year:2012-2013</a>
-    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+<nav id="main-nav" class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a id="main-brand" href="#" class="nav-item nav-link">Current Academic Year:2012-2013</a>
+    <button id="main-toggle" type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarCollapse">
+    <div id="main-collapse" class="collapse navbar-collapse" id="navbarCollapse">
         <div class="navbar-nav ml-auto">
-           <a href="#" class="nav-item nav-link active"><img src="../../../assets/image/star.png"/>Dashboard</a>
+           <a id="main-dashboard" href="#" class="nav-item nav-link active"><img src="../../../assets/image/star.png"/>Dashboard</a>
         </div>
         <div class="navbar-nav ">
-            <a href="#" class="nav-item nav-link"><img src="../../../assets/image/thought.png"/>Widget</a>
-            <a href="#" class="nav-item nav-link"><img src="../../../assets/image/Payment_details.gif"/>Options</a>
+            <a id="main-widget" href="#" class="nav-item nav-link"><img src="../../../assets/image/thought.png"/>Widget</a>
+            <a id="main-options" href="#" class="nav-item nav-link"><img src="../../../assets/image/Payment_details.gif"/>Options</a>
           </div>
           <div class="navbar-nav">
             <a href="#" class="nav-item nav-link">Academic Year View</a>
-            <select class="nav-select">
-              <option value="volvo" selected>2012-2013</option>
-              <option value="saab">2014-2015</option>
-              <option value="vw">2016-2017</option>
-              <option value="audi">2018-2019</option>
+            <select id="main-year" class="nav-select">
+              <option id="2012-2013" value="" selected>2012-2013</option>
+              <option id="2014-2015" value="">2014-2015</option>
+              <option id="2016-2017" value="">2016-2017</option>
+              <option id="2018-2019" value="">2018-2019</option>
             </select>
           </div>
     </div>
@@ -31,47 +31,47 @@
     <h3 style="color:red">School<span style="color: blue">Admin</span></h3>
     <p style="text-align: right;font-family:fantasy;margin-top:-11px">Library Edition</p>
   </div>
-  <ul>
-    <li (click)="toggleEdit()"><a href="#">Admin Master</a><i class="fa fa-angle-double-down"></i>
-         <ul *ngIf=isEdit>
-           <li><img  style="height:20px" src="../../../assets/image/teacher_icon.jpg"/><a href="#">Staff</a></li>
-           <li><i class="fa fa-user fa-xs"></i>&nbsp;<a href="#">about</a></li>
+  <ul id="main-sidenave">
+    <li id="main-adminMaster" (click)="toggleEdit()"><a href="#">Admin Master</a><i class="fa fa-angle-double-down"></i>
+         <ul id="main-admin" *ngIf=isEdit>
+           <li id="admin-staff"><img  style="height:20px" src="../../../assets/image/teacher_icon.jpg"/><a id="staff" href="#">Staff</a></li>
+           <li id=""><i class="fa fa-user fa-xs"></i>&nbsp;<a id="" href="#">about</a></li>
            <!-- <li><a href="#">about</a></li>
            <li><a href="#">about</a></li> -->
 
          </ul>
     </li>
-    <li><a href="#">Library Master</a><i class="fa fa-angle-double-down"></i></li>
-    <li><a href="#">Student Information</a><i class="fa fa-angle-double-down"></i></li>
-    <li><a href="#">Masters</a><i class="fa fa-angle-double-down"></i></li>
-    <li><a href="#">Book Reports</a><i class="fa fa-angle-double-down"></i></li>
+    <li id="main-lMaster"><a  id="lib-master" href="#">Library Master</a><i class="fa fa-angle-double-down"></i></li>
+    <li id="main-sInfo">  <a  id="stu-info"  href="#">Student Information</a><i class="fa fa-angle-double-down"></i></li>
+    <li id="main-master"> <a  id="master" href="#">Masters</a><i class="fa fa-angle-double-down"></i></li>
+    <li id="main-bReport"><a id="b-repo" href="#">Book Reports</a><i class="fa fa-angle-double-down"></i></li>
   </ul>
   <div class="container">
     <p style="font-family:Sofia">Developed By</p>
   </div>
 </div>
 
- <div class="col-md-10" style="text-align:center;height:auto;">
-      <ul class="nav nav-tabs">
+ <div id="main-content" class="col-md-10" style="text-align:center;height:100%;">
+      <ul id="nav-tabs" class="nav nav-tabs">
             <li class="nav-item">
-              <a class="nav-link active" href="#">School Master</a>
+              <a id="tab-sMaster" class="nav-link active" href="#">School Master</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Switch Academic Year</a>
+              <a id="tab-saYear" class="nav-link" href="#">Switch Academic Year</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Default Setting</a>
+              <a id="tab-defSet" class="nav-link" href="#">Default Setting</a>
             </li>
       </ul>
-        <h1>
+        <h2>
           Welcome to {{ title }}!
-        </h1>
-        <img src="../../../assets/image/lms_banner.jpg" height="139" width="362"/>
+        </h2>
+        <img id="wel-img" src="../../../assets/image/lms_banner.jpg" height="125" width="300"/>
         <router-outlet></router-outlet>
     </div>
   </div>
 </div>
-<footer>
+<footer id="main-footer">
     <div class="row">
         <div class="col-md-3">
         <p style="text-align:left;margin: 6px 0px 0px 11px;">User: Admin  :: &nbsp;&nbsp;{{now | date:'medium'}}</p>

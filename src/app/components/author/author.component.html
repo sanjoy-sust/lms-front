@@ -1,14 +1,14 @@
-<div class="container">
-<h1>Author Add</h1>
-<form class="" [formGroup]="authorForm" (ngSubmit)="addAuthor()">
-  <div class="form-group">
-    <input class="form-control form-control-sm" placeholder="First Name" formControlName="firstName">
-    <input class="form-control form-control-sm" placeholder="Last Name" formControlName="lastName">
-    <input class="form-control form-control-sm" placeholder="E-mail" formControlName="email">
-    <input class="form-control form-control-sm" placeholder="Address" formControlName="address">
-    <input class="form-control form-control-sm" placeholder="Type" formControlName="type">
+<div id="auth-con" class="container">
+<h3 id="auth-h3"> Author Add</h3>
+<form class="" id="auth-form" [formGroup]="authorForm" (ngSubmit)="addAuthor()">
+  <div id="auth-from-roup" class="form-group">
+    <input id="auth-fname" class="form-control form-control-sm" placeholder="First Name" formControlName="firstName">
+    <input id="auth-lname" class="form-control form-control-sm" placeholder="Last Name" formControlName="lastName">
+    <input id="auth-email" class="form-control form-control-sm" placeholder="E-mail" formControlName="email">
+    <input id="auth-address" class="form-control form-control-sm" placeholder="Address" formControlName="address">
+    <input id="auth-type" class="form-control form-control-sm" placeholder="Type" formControlName="type">
   </div>
-  <button  color="info" class="my-4" type="submit">Add</button>
+  <button id="auth-submit" color="info" class="my-4" type="submit">Add</button>
 </form>
 </div>
 
