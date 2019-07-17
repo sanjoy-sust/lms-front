@@ -11,6 +11,9 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { PublisherComponent } from './components/publisher/publisher.component';
 import { BookComponent } from './components/book/book.component';
 import { BookSelfComponent } from './components/book-self/book-self.component';
+import { LoginComponent } from './components/users/login/login.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+
 
 
 @NgModule({
@@ -20,7 +23,9 @@ import { BookSelfComponent } from './components/book-self/book-self.component';
     HomeComponent,
     PublisherComponent,
     BookComponent,
-    BookSelfComponent
+    BookSelfComponent,
+    LoginComponent,
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,
