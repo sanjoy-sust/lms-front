@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
   title = 'Libary Management System';
-  constructor() { }
-
+  isEdit: boolean=false;
+  now:number;
+  constructor() {
+      setInterval(() => {
+        this.now = Date.now();
+      }, 1);
+  }
   ngOnInit() {
   }
-
+  toggleEdit(){
+    this.isEdit= !this.isEdit;
+  }
 }

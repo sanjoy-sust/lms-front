@@ -5,17 +5,25 @@ import {HomeComponent} from './components/home/home.component';
 import {PublisherComponent} from './components/publisher/publisher.component';
 import {BookComponent} from './components/book/book.component';
 import {LoginComponent} from './components/users/login/login.component';
-import {DashboardComponent} from './components/dashboard/dashboard.component'
+import { AuthorListComponent } from './components/home/author-list/author-list.component';
+
 
 const appRoutes: Routes = [
-  { path: 'dashboard', component: DashboardComponent},
   { path: 'login', component: LoginComponent},
-  { path: 'author', component: AuthorComponent},
   { path: 'publisher', component: PublisherComponent},
   { path: 'book', component: BookComponent},
-  { path: 'home', component: HomeComponent},
-  { path: '', redirectTo: 'home', pathMatch: 'full'},
+  { path: 'author', component:AuthorComponent},
+  { path: 'author-list', component:AuthorListComponent},
+  { path: 'home', component: HomeComponent,
+
+  children: [
+    { path: '', redirectTo: 'home', pathMatch: 'full' },
+    { path: 'author-list', component:AuthorListComponent }
+            ] 
+    },
+  { path: '', redirectTo: 'login', pathMatch: 'full'},
   ]
+
 @NgModule({
   imports: [
     RouterModule.forRoot(appRoutes)
