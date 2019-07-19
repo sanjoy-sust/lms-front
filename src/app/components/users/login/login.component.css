@@ -20,8 +20,7 @@
 }
 #login-form {
 	width: 406px;
-	
-    padding-top: 192px
+    padding-top: 145px
 }
 legend {
 	display: none;
@@ -29,6 +28,7 @@ legend {
 
 fieldset {
 	border: 0;
+	padding-top: 28px
 }
 
 label {
@@ -41,7 +41,6 @@ label {
 input {
 	width: 220px;
 	display: block;
-	padding: 4px;
 	font-size: 18px;
 	color: #3a3a3a;
 	font-family: Georgia, serif;
