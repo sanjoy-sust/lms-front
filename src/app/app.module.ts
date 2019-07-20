@@ -12,7 +12,7 @@ import { PublisherComponent } from './components/publisher/publisher.component';
 import { BookComponent } from './components/book/book.component';
 import { BookSelfComponent } from './components/book-self/book-self.component';
 import { LoginComponent } from './components/users/login/login.component';
-import { AuthorListComponent } from './components/home/author-list/author-list.component';
+import { AuthorListComponent } from './components/author-list/author-list.component';
 import {AuthorListService} from './services/author-list.service'
 
 

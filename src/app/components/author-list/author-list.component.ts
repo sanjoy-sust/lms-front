@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import { AuthorListService } from '../../../services/author-list.service';
+import { AuthorListService } from '../../services/author-list.service';
 
 @Component({
   selector: 'app-author-list',
