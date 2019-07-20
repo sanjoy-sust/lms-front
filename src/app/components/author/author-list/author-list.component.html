@@ -23,7 +23,7 @@
   
 </table>
 <div class="center2">
- <div class="add"><button class="bt-add"><img src="../../../assets/image/add.png" alt=""> Add</button></div>
+ <div class="add"><button (click)="openModal('custom-modal-1')" class="bt-add"><img src="../../../assets/image/add.png" alt=""> Add</button></div>
  <div class="arrow">
    <button><<</button>
    <button><</button>
@@ -33,4 +33,21 @@
    <button>>></button>
  </div>
 </div>
+<tmodal id="custom-modal-1">
+
+  <div class="tmodal">
+      
+      <div class="modal-body">
+        <div class="title">
+          <p>{{title}}</p>
+        </div>
+          <p>
+              Home page text: <input type="text" [(ngModel)]="bodyText" />
+          </p>
+          <button (click)="closeModal('custom-modal-1');">Add</button>
+          <button (click)="closeModal('custom-modal-1');">Close</button>
+      </div>
+  </div>
+  <div class="modal-background"></div>
+</tmodal>
 </div>
