@@ -57,19 +57,7 @@ export const CHARACTERS: any[] =
   {
     SlNo: '10',
     Class: 'Unknown',
-    Weight: 'Lemon Candy',
+    Weight: 'Lemon Candy hfhf hfcjf hfghf  fhfyfyhf',
     Strength:'203',
-  },
-  {
-    SlNo: '11',
-    Class: 'Unknown',
-    Weight: 'Lemon Candy',
-    Strength:'203',
-  },
-  {
-    SlNo: '12',
-    Class: 'Unknown',
-    Weight: 'Lemon Candy',
-    Strength:'203',
-  },
+  }
 ]

@@ -5,27 +5,34 @@
 table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
-    width: 100%;
+    width: 80%;
+    margin-right: auto;
+    margin-left: auto;
   }
   
   td, th {
     border: 1px solid black;
     text-align: left;
-    padding: 8px;
+    padding: 2px;
   }
   th{
    background-color:#ecc7c7b0;
    text-align: center;
   }
   .center{
-    width:100%;
-    height:30px;
+    width: 80%;
+    margin-right: auto;
+    margin-left: auto;
+    height: 30px;
     background: linear-gradient(#de1325 0%, #900916 100%);
-    text-align:center;
-    color:#fff
+    text-align: center;
+    color: #fff;
+    
   }
   .center2{
-    width: 100%;
+    width: 80%;
+    margin-right: auto;
+    margin-left: auto;
     height: 71px;
     background-color: #c3b3b378;
     text-align: center;
@@ -35,7 +42,7 @@ table {
   }
   .add{
     float: left;
-    width: 401px;
+    width: 297px;
     padding: 6px;
    }
   .arrow{

@@ -1,1 +1,91 @@
-<router-outlet></router-outlet>
+
+
+
+
+<!--The content below is only a placeholder and can be replaced.-->
+<nav id="main-nav" class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a id="main-brand" href="#" class="nav-item nav-link">Current Academic Year:2012-2013</a>
+    <button id="main-toggle" type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div id="main-collapse" class="collapse navbar-collapse" id="navbarCollapse">
+      <div class="navbar-nav ml-auto">
+          <a id="home-addPublusher"  routerLink="/author-list"><img
+            src="../../../assets/image/star.png" />Dashboard</a>
+      </div>
+      <div class="navbar-nav ">
+        <a id="main-widget" href="#" class="nav-item nav-link"><img src="../../../assets/image/thought.png" />Widget</a>
+        <a id="main-options" href="#" class="nav-item nav-link"><img
+            src="../../../assets/image/Payment_details.gif" />Options</a>
+      </div>
+      <div class="navbar-nav">
+        <a href="#" class="nav-item nav-link">Academic Year View</a>
+        <select id="main-year" class="nav-select">
+          <option id="2012-2013" value="" selected>2012-2013</option>
+          <option id="2014-2015" value="">2014-2015</option>
+          <option id="2016-2017" value="">2016-2017</option>
+          <option id="2018-2019" value="">2018-2019</option>
+        </select>
+      </div>
+    </div>
+  </nav>
+  
+  <div class="container-fluid">
+    <div class="row">
+      <div class="side-nav col-md-2">
+        <div class="container">
+          <h3 style="color:red">Universal</h3>
+          <p style="text-align: right;font-family:fantasy;margin-top:-11px"><span style="color: blue">Library</span>
+            Management</p>
+        </div>
+        <ul id="main-sidenave">
+          <li id="main-adminMaster" (click)="toggleEdit()"><a href="#">Admin Master</a><i
+              class="fa fa-angle-double-down"></i>
+            <ul id="main-admin" *ngIf=isEdit>
+              <li id="admin-staff"><img style="height:20px" src="../../../assets/image/teacher_icon.jpg" /><a id="staff"
+                  href="#">Staff</a></li>
+              <li id=""><i class="fa fa-user fa-xs"></i>&nbsp;<a id="" href="#">about</a></li>
+              <!-- <li><a href="#">about</a></li>
+             <li><a href="#">about</a></li> -->
+  
+            </ul>
+          </li>
+          <li id="main-lMaster"><a id="lib-master" href="#">Library Master</a><i class="fa fa-angle-double-down"></i></li>
+          <li id="main-sInfo"> <a id="stu-info" href="#">Student Information</a><i class="fa fa-angle-double-down"></i>
+          </li>
+          <li id="main-master"> <a id="master" href="#">Masters</a><i class="fa fa-angle-double-down"></i></li>
+          <li id="main-bReport"><a id="b-repo" href="#">Book Reports</a><i class="fa fa-angle-double-down"></i></li>
+        </ul>
+  
+        <h4 style="font-family:'Alex Brush';text-align:left">Developed By</h4>
+      </div>
+  
+      <div id="main-content" class="col-md-10" style="text-align:center;height:100%;">
+        <ul id="nav-tabs" class="nav nav-tabs">
+          <li class="nav-item">
+            <a id="tab-sMaster" class="nav-link active" href="#">School Master</a>
+          </li>
+          <li class="nav-item">
+            <a id="tab-saYear" class="nav-link" href="#">Switch Academic Year</a>
+          </li>
+          <li class="nav-item">
+            <a id="tab-defSet" class="nav-link" href="#">Default Setting</a>
+          </li>
+        </ul>
+      
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+  <footer id="main-footer">
+    <div class="row">
+      <div class="col-md-3">
+        <p style="text-align:left;margin: 6px 0px 0px 11px;">User: Admin :: &nbsp;&nbsp;{{now | date:'medium'}}</p>
+      </div>
+      <div class="col-md-9">
+        <p style="margin: 6px 0px 0px 11px;">Copyright 2009-2012 MarvelSoft &nbsp;&nbsp; <a
+            href="#">support.marvelsoft.co.in</a>&nbsp; <a href="#">www.marvelsoft.co.in</a> &nbsp;&nbsp; Helpline:
+          +99-00-999 &nbsp;&nbsp; Version: 5.0.345</p>
+      </div>
+    </div>
+  </footer>

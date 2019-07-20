@@ -7,5 +7,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Libary Management System';
+  isEdit: boolean=false;
+  now:number;
+  constructor() {
+      setInterval(() => {
+        this.now = Date.now();
+      }, 1);
+  }
+  toggleEdit(){
+    this.isEdit= !this.isEdit;
+  }
 
 }
