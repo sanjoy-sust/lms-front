@@ -1,6 +1,6 @@
 <div class="container">
 <div class="center">
-<h4>Class Master</h4>
+<h4>Author List</h4>
 </div>
 
 <table class="table table-bordered">
@@ -9,17 +9,24 @@
       <th *ngFor="let col of columns" scope="col">
           {{col}}
       </th>
+      <th>Actions</th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let char of characters | async;let i = index">
+    <tr *ngFor="let auth of Author">
       <td> 
-        {{i+1}}
+        {{auth.name}}
       </td>
-    <td>{{char.Class}}</td>
-    <td>{{char.Weight}}</td>
-    <td>{{char.Strength}}</td>
-    <td><img src="./assets/image/delete.gif">|<img src="./assets/image/edit.gif"></td>
+    <td>{{auth.email}}</td>
+    <td>{{auth.mobile}}</td>
+    <td>{{auth.adress}}</td>
+    <td>{{auth.birthDate}}</td>
+    <td>{{auth.country}}</td>
+    <td>{{auth.biography}}</td>
+    <td>{{auth.background}}</td>
+    <td>{{auth.nickname}}</td>
+
+    <td><img src="./assets/image/delete.gif">| <a (click)="openModal('custom-modal-3')"><img src="./assets/image/edit.gif"></a> </td>
     </tr>
 
   </tbody>
@@ -44,12 +51,53 @@
         <div class="title">
           <p>{{title}}</p>
         </div>
-        <app-author>
-            <button (click)="closeModal('custom-modal-1');">Close</button>
-        </app-author>
-          
+        <!-- <form class="" id="auth-form" [formGroup]="addForm" (ngSubmit)="addAuthor()">
+          <div id="auth-from-roup" class="form-group">
+            <input id="auth-name" formControlName="name"  class="form-control form-control-sm" placeholder="Name"  >
+            <input id="auth-lname" formControlName="email" class="form-control form-control-sm" placeholder="Email"  >
+            <input id="auth-email" formControlName="mobile" class="form-control form-control-sm" placeholder="Mobile" >
+            <input id="auth-address" formControlName="adress"  class="form-control form-control-sm" placeholder="Address" >
+            <input id="auth-type" formControlName="birthdate"  type="datetime" class="form-control form-control-sm" placeholder="Birth Date" >
+            <input id="auth-address"formControlName="country"  class="form-control form-control-sm" placeholder="Country" >
+            <input id="auth-address" formControlName="biography"  class="form-control form-control-sm" placeholder="Biography">
+            <input id="auth-address" formControlName="background"  class="form-control form-control-sm" placeholder="Background" >
+            <input id="auth-address"formControlName="nickname"  class="form-control form-control-sm" placeholder="Nickname">
+
+          </div>
+          <button id="auth-submit" color="info" class="my-4" type="submit">Add</button>
+          <button (click)="closeModal('custom-modal-1');">Close</button>       
+        </form> -->
       </div>
   </div>
   <div class="modal-background"></div>
 </tmodal>
+
+<tmodal id="custom-modal-3">
+
+    <div class="tmodal">
+        
+        <div class="modal-body">
+          <div class="title">
+            <p>{{title}}</p>
+          </div>
+          <form class="" id="auth-form" [formGroup]="editForm" (ngSubmit)="updateAuthor()">
+            <div id="auth-from-roup" class="form-group">
+              <input type="hidden" formControlName="id">
+              <input id="auth-fname" class="form-control form-control-sm" placeholder="Name" formControlName="name" >
+              <input id="auth-lname" class="form-control form-control-sm" placeholder="Email"  formControlName="email">
+              <input id="auth-email" class="form-control form-control-sm" placeholder="Mobile" formControlName="mobile">
+              <input id="auth-address" class="form-control form-control-sm" placeholder="Address" formControlName="adress">
+              <input id="auth-type" type="datetime" class="form-control form-control-sm" placeholder="Birth Date" formControlName="birthdate">
+              <input id="auth-address" class="form-control form-control-sm" placeholder="Country" formControlName="country">
+              <input id="auth-address" class="form-control form-control-sm" placeholder="Biography" formControlName="biography">
+              <input id="auth-address" class="form-control form-control-sm" placeholder="Background" formControlName="firstName">
+              <input id="auth-address" class="form-control form-control-sm" placeholder="Nickname" formControlName="firstName">
+            </div>
+            <button id="auth-submit" color="info" class="my-4" type="submit">Add</button>
+            <button (click)="closeModal('custom-modal-3');">Close</button>       
+          </form>
+        </div>
+    </div>
+    <div class="modal-background"></div>
+  </tmodal>
 </div>

@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import {HttpClientModule}  from '@angular/common/http'
 
 
 import { AppComponent } from './app.component';
@@ -16,6 +16,10 @@ import { AuthorListComponent } from './components/author/author-list/author-list
 import {AuthorListService} from './services/author-list.service'
 import { ModalService } from './services/modal.service';
 import { ModalComponent } from './components/modal/modal.component';
+import {BookService} from './services/book.service';
+import {PublisherService} from './services/publisher.service'
+
+
 
 
 @NgModule({
@@ -35,8 +39,9 @@ import { ModalComponent } from './components/modal/modal.component';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [AuthorListService,ModalService],
+  providers: [AuthorListService,ModalService,BookService,PublisherService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

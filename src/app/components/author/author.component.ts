@@ -17,7 +17,6 @@ export class AuthorComponent implements OnInit {
   constructor(private formBuilder: FormBuilder) {
     this.createForm();
   }
-
   ngOnInit() {
   }
   addAuthor() {
