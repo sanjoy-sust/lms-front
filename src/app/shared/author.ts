@@ -1,14 +1,15 @@
 import { Time } from "@angular/common";
 
 export class Author {
-    id:string;
+    id:number;
     name:string;
     email:string;
     mobile:number;
-    adress:string;
-    birthDate:Date&Time;
+    address:string;
+    birthDate:Date;
     country:string;
     biography:string;
-    backgroud:string;
+    background:string;
     nickname:string;
+    
 }

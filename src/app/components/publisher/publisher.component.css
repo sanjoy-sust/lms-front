@@ -1,87 +1,87 @@
 
 .container{
-    margin-top: 30px;
+  margin-top: 30px;
 }
 table {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    width: 80%;
-    margin-right: auto;
-    margin-left: auto;
-  }
-  
-  td, th {
-    border: 1px solid black;
-    text-align: left;
-    padding: 2px;
-  }
-  th{
-   background-color:#ecc7c7b0;
-   text-align: center;
-  }
-  .center{
-    width: 80%;
-    margin-right: auto;
-    margin-left: auto;
-    height: 30px;
-    background: linear-gradient(#de1325 0%, #900916 100%);
-    text-align: center;
-    color: #fff;
-    
-  }
-  .center2{
-    width: 80%;
-    margin-right: auto;
-    margin-left: auto;
-    height: 71px;
-    background-color: #c3b3b378;
-    text-align: center;
-    margin-top: 3px;
-    padding: 18px;
-    
-  }
-  .add{
-    float: left;
-    width: 297px;
-    padding: 6px;
-   }
-  .arrow{
-    border: 1px solid black;
-    width: 197px;
-    height: 36px;
-    padding: 2px;
-    margin-right: auto;
-    margin-left: auto;
-   
-  }
-  .bt-add{
-   float:right
-  }
-  tmodal {
-    /* modals are hidden by default */
-    display: none;
-  }
-  .tmodal {
-    /* modal container fixed across whole screen */
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+}
 
-    /* z-index must be higher than .modal-background */
-    z-index: 1000;
-    
-    /* enables scrolling for tall modals */
-    overflow: auto;
+td, th {
+  border: 1px solid black;
+  text-align: left;
+  padding: 2px;
+}
+th{
+ background-color:#ecc7c7b0;
+ text-align: center;
+}
+.center{
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  height: 30px;
+  background: linear-gradient(#de1325 0%, #900916 100%);
+  text-align: center;
+  color: #fff;
+  
+}
+.center2{
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  height: 71px;
+  background-color: #c3b3b378;
+  text-align: center;
+  margin-top: 3px;
+  padding: 18px;
+  
+}
+.add{
+  float: left;
+  width: 297px;
+  padding: 6px;
+ }
+.arrow{
+  border: 1px solid black;
+  width: 197px;
+  height: 36px;
+  padding: 2px;
+  margin-right: auto;
+  margin-left: auto;
+ 
+}
+.bt-add{
+ float:right
+}
+tmodal {
+  /* modals are hidden by default */
+  display: none;
+}
+.tmodal {
+  /* modal container fixed across whole screen */
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  /* z-index must be higher than .modal-background */
+  z-index: 1000;
+  
+  /* enables scrolling for tall modals */
+  overflow: auto;
 }
 .modal-body {
-  padding: 20px;
-  background: #fff;
-  margin-left: auto;
-  width: 310px;
-  margin-right: auto;
-  margin-top: 81px;
+padding: 20px;
+background: #fff;
+margin-left: auto;
+width: 600px;
+margin-right: auto;
+margin-top: 81px;
 }
 .modal-background {
   /* modal background fixed across whole screen */

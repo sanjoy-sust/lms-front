@@ -5,7 +5,7 @@
 table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
-    width: 80%;
+    width: 100%;
     margin-right: auto;
     margin-left: auto;
   }
@@ -20,7 +20,7 @@ table {
    text-align: center;
   }
   .center{
-    width: 80%;
+    width: 100%;
     margin-right: auto;
     margin-left: auto;
     height: 30px;
@@ -30,7 +30,7 @@ table {
     
   }
   .center2{
-    width: 80%;
+    width: 100%;
     margin-right: auto;
     margin-left: auto;
     height: 71px;
@@ -79,7 +79,7 @@ table {
   padding: 20px;
   background: #fff;
   margin-left: auto;
-  width: 310px;
+  width: 600px;
   margin-right: auto;
   margin-top: 81px;
 }
