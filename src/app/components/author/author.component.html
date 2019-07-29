@@ -1,12 +1,92 @@
-
-<form class="" id="auth-form" [formGroup]="authorForm" (ngSubmit)="addAuthor()">
-  <div id="auth-from-roup" class="form-group">
-    <input id="auth-fname" class="form-control form-control-sm" placeholder="First Name" formControlName="firstName">
-    <input id="auth-lname" class="form-control form-control-sm" placeholder="Last Name" formControlName="lastName">
-    <input id="auth-email" class="form-control form-control-sm" placeholder="E-mail" formControlName="email">
-    <input id="auth-address" class="form-control form-control-sm" placeholder="Address" formControlName="address">
-    <input id="auth-type" class="form-control form-control-sm" placeholder="Type" formControlName="type">
+<div class="container">
+  <div class="row">
+    <p *ngIf="updateMsg" ngClass="Success"> Record Updated Successfully</p>
+  
+  <div class="col-md-12 center">
+  <h4>Author List</h4>
+</div>
+<ag-grid-angular 
+style="margin-left:auto;margin-right: auto; width:70%;  height: 500px;" 
+class="ag-theme-balham"
+[rowData]="rowData | async"
+[columnDefs]="columnDefs"
+[rowSelection]="multiple"
+[pagination]="true"
+[paginationPageSize]="50"
+enableFilter="true"
+floatingFilter="true"
+>
+</ag-grid-angular>
+  <table class=" col-md-12 table table-fixed table-bordered">
+    <thead>
+      <tr>
+        <th *ngFor="let col of columns" scope="col">
+            {{col}}
+        </th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let auth of allAuthor | async">
+        <td> 
+          {{auth.name}}
+        </td>
+      <td>{{auth.email}}</td>
+      <td>{{auth.mobile}}</td>
+      <td>{{auth.address}}</td>
+      <td>{{auth.birthDate | date}}</td>
+      <td>{{auth.country}}</td>
+      <td>{{auth.biography}}</td>
+      <td>{{auth.background}}</td>
+      <td>{{auth.nickname}}</td>
+  
+      <td><img src="./assets/image/delete.gif">| <a (click)="openModal('addAuthorModel');auhtorEdit(auth.id)"><img src="./assets/image/edit.gif"></a> </td>
+      </tr>
+  
+    </tbody>
+  </table> -->
+  
+  <div class="col-md-12 center2">
+   <div class="add"><button (click)="openModal('addAuthorModel')" class="bt-add"><img src="../../../assets/image/add.png" alt=""> Add</button></div>
+   <div class="arrow">
+     <button><<</button>
+     <button><</button>
+     <button>.</button>
+     <button>.</button>
+     <button>></button>
+     <button>>></button>
+   </div>
   </div>
-  <button id="auth-submit" color="info" class="my-4" type="submit">Add</button>
-</form>
-
+  <tmodal id="addAuthorModel">
+  
+    <div class="tmodal">
+        
+        <div class="modal-body">
+          <div class="title">
+            <p>{{title}}</p>
+          </div>
+          <p *ngIf="message" ngClass="Success"> Record Save Successfully</p>
+  
+          <form class="" id="auth-form" [formGroup]="authForm" (ngSubmit)="addAuthor()">
+              <div id="auth-from-roup" class="form-group">
+                <input id="auth-fname" name="name" class="form-control form-control-sm" placeholder="Name" formControlName="name">
+                <input id="auth-lname" name="email" class="form-control form-control-sm" placeholder="Email" formControlName="email">
+                <input id="auth-email" name="mobile" class="form-control form-control-sm" placeholder="Mobile" formControlName="mobile">
+                <input id="auth-address" name="address" class="form-control form-control-sm" placeholder="Address" formControlName="address">
+                <input id="auth-birthdate" name="birthDate" type="date" class="form-control form-control-sm" placeholder="birthDate" formControlName="birthDate">
+                <input id="auth-country" name="country" class="form-control form-control-sm" placeholder="Country" formControlName="country">
+                <input id="auth-bio" name="biography"class="form-control form-control-sm" placeholder="Biography" formControlName="biography">
+                <input id="auth-back" name="background"class="form-control form-control-sm" placeholder="Background" formControlName="background">
+                <input id="auth-nk" name="nickname" class="form-control form-control-sm" placeholder="Nickname" formControlName="nickname">
+  
+              </div>
+              <button id="auth-submit" color="info" [disabled]="authForm.invalid" class="my-4" type="submit">Add</button>
+            <button (click)="closeModal('addAuthorModel');">Close</button>       
+  
+            </form>
+        </div>
+    </div>
+    <div class="modal-background"></div>
+  </tmodal>
+  </div>
+</div>

@@ -5,7 +5,6 @@ import {HomeComponent} from './components/home/home.component';
 import {PublisherComponent} from './components/publisher/publisher.component';
 import {BookComponent} from './components/book/book.component';
 import {LoginComponent} from './components/users/login/login.component';
-import { AuthorListComponent } from './components/author/author-list/author-list.component';
 
 
 const appRoutes: Routes = [
@@ -13,7 +12,6 @@ const appRoutes: Routes = [
   { path: 'publisher', component: PublisherComponent},
   { path: 'book', component: BookComponent},
   { path: 'author', component:AuthorComponent},
-  { path: 'author-list', component:AuthorListComponent},
   { path: 'home', component: HomeComponent},
   { path: '', redirectTo: 'home', pathMatch: 'full'},
   ]

@@ -3,7 +3,7 @@
 
     /* background:url('') top center no-repeat; */
     font-family: Georgia, serif;
-    background: url(assets/image/login-page-bg.jpg) top center no-repeat #c4c4c4;
+    background: url(/assets/image/login-page-bg.jpg) top center no-repeat #c4c4c4;
     color: #3a3a3a;
     height: 100%;
 }
