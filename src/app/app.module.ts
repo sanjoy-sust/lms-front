@@ -1,8 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {HttpClientModule}  from '@angular/common/http'
-import { AgGridModule } from 'ag-grid-angular';
-
+import {AgGridModule} from "ag-grid-angular";
 
 import { AppComponent } from './app.component';
 import { AuthorComponent } from './components/author/author.component';
@@ -17,7 +16,8 @@ import { ModalService } from './services/modal.service';
 import { ModalComponent } from './components/modal/modal.component';
 import {AuthorService} from './services/author.service';
 import {BookService} from './services/book.service';
-import {PublisherService} from './services/publisher.service'
+import {PublisherService} from './services/publisher.service';
+import { CellRenderComponent } from './components/cell-render/cell-render.component'
 
 
 
@@ -32,6 +32,7 @@ import {PublisherService} from './services/publisher.service'
     BookSelfComponent,
     LoginComponent,
     ModalComponent,
+    CellRenderComponent,
   ],
   imports: [
     BrowserModule,
@@ -39,9 +40,10 @@ import {PublisherService} from './services/publisher.service'
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    AgGridModule.withComponents([])
+    AgGridModule.withComponents([AuthorComponent])
   ],
   providers: [AuthorService,ModalService,BookService,PublisherService],
+  entryComponents:[CellRenderComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
