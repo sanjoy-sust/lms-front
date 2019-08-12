@@ -14,9 +14,7 @@ constructor(private http:HttpClient) {
     'Content-Type': 'application/json'
   })
 }  
-getColumns(): string[]{
-  return ["Name", "Email", "Mobile", "Adress","Birth Date","Country","Biography","Background","Nickname"]};
- 
+
   getAuthor():Observable<Author[] >{
     return this.http.get<Author[]>( this.authUrl)
   }
@@ -28,7 +26,10 @@ getColumns(): string[]{
   }
 
   updateAuthor(author:Author):Observable<number>{
-    return this.http.put<number>(this.authUrl+author.id,author,this.httpOptions)
+    return this.http.put<number>(this.authUrl+author.id,author,this.httpOptions);
+  }
+  deleteAuth(id:number){
+    return this.http.delete(this.authUrl+id)
   }
 
 }

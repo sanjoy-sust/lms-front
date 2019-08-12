@@ -2,23 +2,38 @@
 .container{
   margin-top: 30px;
 }
+
+html {
+font-family: verdana;
+font-size: 10pt;
+line-height: 25px;
+}
 table {
-  font-family: arial, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
-  margin-right: auto;
-  margin-left: auto;
+border-collapse: collapse;
+width: 100%;
+overflow-x: scroll;
+display: block;
+}
+thead {
+background-color: #EFEFEF;
+}
+thead, tbody {
+display: block;
+}
+tbody {
+overflow-y: scroll;
+overflow-x: hidden;
+height: 140px;
+}
+td, th {
+min-width: 100px;
+height: 25px;
+border: dashed 1px lightblue;
+overflow:hidden;
+text-overflow: ellipsis;
+max-width: 100px;
 }
 
-td, th {
-  border: 1px solid black;
-  text-align: left;
-  padding: 2px;
-}
-th{
- background-color:#ecc7c7b0;
- text-align: center;
-}
 .center{
   width: 100%;
   margin-right: auto;
@@ -36,77 +51,45 @@ th{
   height: 71px;
   background-color: #c3b3b378;
   text-align: center;
-  margin-top: 3px;
+  margin-top: 13px;
   padding: 18px;
   
 }
-.add{
-  float: left;
-  width: 297px;
-  padding: 6px;
- }
-.arrow{
-  border: 1px solid black;
-  width: 197px;
-  height: 36px;
-  padding: 2px;
-  margin-right: auto;
-  margin-left: auto;
- 
-}
-.bt-add{
- float:right
-}
-tmodal {
-  /* modals are hidden by default */
-  display: none;
-}
-.tmodal {
-  /* modal container fixed across whole screen */
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
 
-  /* z-index must be higher than .modal-background */
-  z-index: 1000;
-  
-  /* enables scrolling for tall modals */
-  overflow: auto;
+.bt-add{
+ margin: 10px;
 }
+
 .modal-body {
 padding: 20px;
-background: #fff;
-margin-left: auto;
-width: 600px;
-margin-right: auto;
-margin-top: 81px;
+background: #ebe4e4;;
+width: 497px;
 }
-.modal-background {
-  /* modal background fixed across whole screen */
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
 
-  /* semi-transparent black  */
-  background-color: #000;
-  opacity: 0.75;
-  
-  /* z-index must be below .modal and above everything else  */
-  z-index: 900;
+.modal-background {
+/* modal background fixed across whole screen */
+position: fixed;
+top: 0;
+right: 0;
+bottom: 0;
+left: 0;
+
+/* semi-transparent black  */
+background-color: #000;
+opacity: 0.75;
+
+/* z-index must be below .modal and above everything else  */
+z-index: 900;
 }
 body.modal-open {
-  /* body overflow is hidden to hide main scrollbar when modal window is open */
-  overflow: hidden;
+/* body overflow is hidden to hide main scrollbar when modal window is open */
+overflow: hidden;
 }
 input{
-  margin: 2px;
+margin: 2px;
 }
 .title{
-  color: white;
-  text-align: center;
-  background: linear-gradient(#de1325 0%, #900916 100%);
+color: white;
+text-align: center;
+background: linear-gradient(#de1325 0%, #900916 100%);
 }

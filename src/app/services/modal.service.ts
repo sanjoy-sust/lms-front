@@ -28,5 +28,4 @@ export class ModalService {
         let tmodal: any = this.modals.filter(x => x.id === id)[0];
         tmodal.close();
     }
-
 }

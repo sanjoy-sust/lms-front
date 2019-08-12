@@ -1,65 +1,50 @@
 <div class="container">
-  <div class="center">
-  <h4>Book List</h4>
-  </div>
-  
-  <table class="table table-bordered">
-    <thead>
-      <tr>
-        <th *ngFor="let col of columns" scope="col">
-            {{col}}
-        </th>
-        <th>Actiion</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let char of characters | async">
-        <td *ngFor="let col of columns"> 
-          {{char[col]}}
-        </td>
-      <td><img src="./assets/image/delete.gif">|<a (click)="openModal('bookModal')"> <img src="./assets/image/edit.gif"></a></td>
-      </tr>
-  
-    </tbody>
-  </table>
-  
-  <div class="center2">
-   <div class="add"><button (click)="openModal('bookModal')" class="bt-add"><img src="../../../assets/image/add.png" alt=""> Add</button></div>
-   <div class="arrow">
-     <button><<</button>
-     <button><</button>
-     <button>.</button>
-     <button>.</button>
-     <button>></button>
-     <button>>></button>
-   </div>
-  </div>
-  <tmodal id="bookModal">
-  
-    <div class="tmodal">
-        
-        <div class="modal-body">
-          <div class="title">
-            <p>{{title}}</p>
-          </div>
-          <form class="" id="auth-form">
-            <div id="auth-from-roup" class="form-group">
-              <input id="book-name" class="form-control form-control-sm" placeholder="Name"  >
-              <input id="book-email" class="form-control form-control-sm" placeholder="Email"  >
-              <input id="book-mobile" class="form-control form-control-sm" placeholder="Mobile" >
-              <input id="book-address" class="form-control form-control-sm" placeholder="Address" >
-              <input id="book-birthdate" type="date" class="form-control form-control-sm" placeholder="Birth Date" >
-              <input id="book-country" class="form-control form-control-sm" placeholder="Country" >
-              <input id="book-biography" class="form-control form-control-sm" placeholder="Biography">
-              <input id="auth-background" class="form-control form-control-sm" placeholder="Background" >
-              <input id="auth-nickname" class="form-control form-control-sm" placeholder="Nickname">
-  
-            </div>
-            <button id="auth-submit" color="info" class="my-4" type="submit">Add</button>
-            <button (click)="closeModal('bookModal');">Close</button>       
-          </form>
-        </div>
+  <div class="row">
+    <div *ngIf="updateMsg" class="alert alert-success alert-dismissible">
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+      <strong>Success!</strong> Your Record Update successfully
     </div>
-    <div class="modal-background"></div>
-  </tmodal>
+  
+  <div class="col-md-12 center">
+  <h4>Book List</h4>
+</div>
+
+<ag-grid-angular style="height: 390px;margin: auto; width:100%"
+class="ag-theme-balham" 
+[rowData]="rowData | async" 
+[columnDefs]="columnDefs" 
+[pagination]="true" 
+[paginationAutoPageSize]="50" 
+[gridOptions]="gridOptions" 
+[animateRows]="true" 
+rowSelection= "multiple"
+[rowSelection]="rowSelection" 
+
+
+enableColResize 
+enableSorting 
+enableFilter="true"
+floatingFilter="true"
+>
+
+</ag-grid-angular>
+
+  <div class="container center2">
+   <div class="row">
+      <div class="col-md-3"></div>
+      <div class="col-md-6">
+      <button (click)="addTitle()" data-toggle="modal" data-target="#formModal" class="bt-add"><img src="../../../assets/image/add.png" alt=""> Add</button>
+      <button (click)="onRemoveSelected()"  [disabled]=""  class="bt-add"><img src="../../../assets/image/delete.gif" alt=""> Delete</button>
+      <button (click)="auhtorEdit()"  [disabled]="" data-toggle="modal" data-target="#formModal"   class="bt-add"><img src="../../../assets/image/edit.gif" alt=""> Edit</button>
+
+     </div>
+     <div class="col-md-3"></div>
+
+    </div>
   </div>
+   
+ </div>
+</div>
+
+
+   

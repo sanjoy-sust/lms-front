@@ -144,7 +144,6 @@ export class AuthorComponent implements OnInit {
     var selectedData = this.gridApi.getSelectedRows();
     var res = this.gridApi.updateRowData({ remove: selectedData });
     var resarr=res.remove;
-     confirm('Are You Sure To Delete')
     if(resarr !==null ){
     for( let i=0;i<=resarr.length-1;i++){
     var id = res.remove[i].data.id;

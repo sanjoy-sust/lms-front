@@ -1,65 +1,89 @@
 <div class="container">
-    <div class="center">
-    <h4>Publisher List</h4>
+  <div class="row">
+    <div *ngIf="updateMsg" class="alert alert-success alert-dismissible">
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+      <strong>Success!</strong> Your Record Update successfully
     </div>
-    
-    <table class="table table-bordered">
-      <thead>
-        <tr>
-          <th *ngFor="let col of columns" scope="col">
-              {{col}}
-          </th>
-          <th>Actiion</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let char of characters | async">
-          <td *ngFor="let col of columns"> 
-            {{char[col]}}
-          </td>
-        <td><img src="./assets/image/delete.gif">|<a (click)="openModal('publisherModal')"> <img src="./assets/image/edit.gif"></a></td>
-        </tr>
-    
-      </tbody>
-    </table>
-    
-    <div class="center2">
-     <div class="add"><button (click)="openModal('publisherModal')" class="bt-add"><img src="../../../assets/image/add.png" alt=""> Add</button></div>
-     <div class="arrow">
-       <button><<</button>
-       <button><</button>
-       <button>.</button>
-       <button>.</button>
-       <button>></button>
-       <button>>></button>
+  
+  <div class="col-md-12 center">
+  <h4>Publisher List</h4>
+</div>
+
+<ag-grid-angular style="height: 390px;margin: auto; width:100%"
+class="ag-theme-balham" 
+[rowData]="rowData | async" 
+[columnDefs]="columnDefs" 
+[pagination]="true" 
+[paginationAutoPageSize]="50" 
+[gridOptions]="gridOptions" 
+[animateRows]="true" 
+rowSelection= "multiple"
+[rowSelection]="rowSelection"
+
+(gridReady)="onGridReady($event)" 
+enableColResize 
+enableSorting 
+enableFilter="true"
+floatingFilter="true"
+>
+
+</ag-grid-angular>
+
+  <div class="container center2">
+   <div class="row">
+      <div class="col-md-3"></div>
+      <div class="col-md-6">
+      <button (click)="addTitle()" data-toggle="modal" data-target="#myPublisher" class="bt-add"><img src="../../../assets/image/add.png" alt=""> Add</button>
+      <button (click)="onRemoveSelected()"  [disabled]=""  class="bt-add"><img src="../../../assets/image/delete.gif" alt=""> Delete</button>
+      <button (click)="publisherEdit()"  [disabled]="" data-toggle="modal" data-target="#myPublisher"   class="bt-add"><img src="../../../assets/image/edit.gif" alt=""> Edit</button>
+
      </div>
+     <div class="col-md-3"></div>
+
     </div>
-    <tmodal id="publisherModal">
-    
-      <div class="tmodal">
-          
-          <div class="modal-body">
-            <div class="title">
-              <p>{{title}}</p>
-            </div>
-            <form class="" id="auth-form">
-              <div id="auth-from-roup" class="form-group">
-                <input id="auth-fname" class="form-control form-control-sm" placeholder="Name"  >
-                <input id="auth-lname" class="form-control form-control-sm" placeholder="Email"  >
-                <input id="auth-email" class="form-control form-control-sm" placeholder="Mobile" >
-                <input id="auth-address" class="form-control form-control-sm" placeholder="Address" >
-                <input id="auth-type" type="date" class="form-control form-control-sm" placeholder="Birth Date" >
-                <input id="auth-address" class="form-control form-control-sm" placeholder="Country" >
-                <input id="auth-address" class="form-control form-control-sm" placeholder="Biography">
-                <input id="auth-address" class="form-control form-control-sm" placeholder="Background" >
-                <input id="auth-address" class="form-control form-control-sm" placeholder="Nickname">
-    
-              </div>
-              <button id="auth-submit" color="info" class="my-4" type="submit">Add</button>
-              <button (click)="closeModal('publisherModal');">Close</button>       
-            </form>
-          </div>
+  </div>
+<div class="modal"  id="myPublisher">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">{{title}}</h4>
+        <button type="button" class="close" (click)="closeModal()" data-dismiss="modal">&times;</button>
       </div>
-      <div class="modal-background"></div>
-    </tmodal>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <div *ngIf="message" class="alert alert-success alert-dismissible">
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+          <strong>Success!</strong> Your Record Add successfully.
+        </div>
+  
+        <form class="" id="auth-form" [formGroup]="publisherForm" (ngSubmit)="addPublisher()">
+          <div id="auth-from-roup" class="form-group">
+            <input id="auth-fname" name="name" class="form-control form-control-sm" placeholder="Name" formControlName="name">
+            <input id="auth-address" name="address" class="form-control form-control-sm" placeholder="Address" formControlName="address">
+            <input id="auth-email" name="mobile" class="form-control form-control-sm" placeholder="Mobile" formControlName="mobile">
+            <input id="auth-birthdate" name="contactPersonName"  class="form-control form-control-sm" placeholder="contact PersonName" formControlName="contactPersonName">
+            <input id="auth-country" name="contactPersonMobile" class="form-control form-control-sm" placeholder="contact PersonMobile" formControlName="contactPersonMobile">
+            <input id="auth-bio" name="website"class="form-control form-control-sm" placeholder="website" formControlName="website">
+            <input id="auth-lname" name="email" class="form-control form-control-sm" placeholder="Email" formControlName="email">
+            <input id="auth-back" name="facebookPage"class="form-control form-control-sm" placeholder="facebook Page" formControlName="facebookPage">
+            <input id="auth-nk" name="about" class="form-control form-control-sm" placeholder="about" formControlName="about">
+
+          </div>
+          <button id="auth-submit" color="info" class="btn btn-secondary" [disabled]="publisherForm.invalid"  type="submit">{{btnTitle}}</button>
+
+        </form>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger"(click)="closeModal()"  data-dismiss="modal">Close</button>
+      </div>
+
     </div>
+  </div>
+</div>
+  </div>
+</div>
