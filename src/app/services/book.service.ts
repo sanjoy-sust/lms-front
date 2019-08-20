@@ -3,7 +3,6 @@ import { Observable } from 'rxjs/Observable';
 import { CHARACTERS } from '../mock-data';
 import {Book} from '../shared/book'
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { from } from 'rxjs';
 
 @Injectable()
 export class BookService {
@@ -19,6 +18,15 @@ export class BookService {
    getBook():Observable<Book[] >{
      return this.http.get<Book[]>( this.bookUrl)
    }
+   getAuthor(){
+   return this.http.get('http://localhost:10230/author/')
+   }
+   getpublisher(){
+    return this.http.get('http://localhost:10230/publisher/')
+    }
+    getTags(){
+      return this.http.get('http://localhost:10230/tag/')
+      }
    getBookId(BookId:string){
      return this.http.get<Book>( this.bookUrl+BookId);
    }

@@ -4,7 +4,7 @@ export interface Book{
     id:number;
     name:string;
     isbn:string;
-    overview:number;
+    overview:string;
     dateOfPublish:Date;
     dateOfReprint:Date;
     acknowledgement:string;
@@ -14,8 +14,17 @@ export interface Book{
     coverDesigner:string;
     coverPhotoUrl:string;
     price:number;
-    authors:any[];
-    publishers:string;
-    tags:string;
+    authors:Author[];
+    publishers:Publishers[];
+    tags:Tags[];
 
+} 
+interface Author{
+ id:number;
+}
+interface Publishers{
+    id:number;
+}
+interface Tags{
+    id:number;
 }

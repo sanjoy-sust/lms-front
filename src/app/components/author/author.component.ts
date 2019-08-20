@@ -109,8 +109,6 @@ export class AuthorComponent implements OnInit {
         this.authForm.controls['background'].setValue(author.background);
         this.authForm.controls['nickname'].setValue(author.nickname);
   
-
-        
       }
     )
   }

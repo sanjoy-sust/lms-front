@@ -20,7 +20,7 @@ class="ag-theme-balham"
 rowSelection= "multiple"
 [rowSelection]="rowSelection" 
 
-
+(gridReady)="onGridReady($event)" 
 enableColResize 
 enableSorting 
 enableFilter="true"
@@ -33,16 +33,91 @@ floatingFilter="true"
    <div class="row">
       <div class="col-md-3"></div>
       <div class="col-md-6">
-      <button (click)="addTitle()" data-toggle="modal" data-target="#formModal" class="bt-add"><img src="../../../assets/image/add.png" alt=""> Add</button>
+      <button (click)="addTitle()" data-toggle="modal" data-target="#myBook" class="bt-add"><img src="../../../assets/image/add.png" alt=""> Add</button>
       <button (click)="onRemoveSelected()"  [disabled]=""  class="bt-add"><img src="../../../assets/image/delete.gif" alt=""> Delete</button>
-      <button (click)="auhtorEdit()"  [disabled]="" data-toggle="modal" data-target="#formModal"   class="bt-add"><img src="../../../assets/image/edit.gif" alt=""> Edit</button>
+      <button (click)="auhtorEdit()"  [disabled]="" data-toggle="modal" data-target="#myBook"   class="bt-add"><img src="../../../assets/image/edit.gif" alt=""> Edit</button>
 
      </div>
      <div class="col-md-3"></div>
 
     </div>
   </div>
-   
+  <div class="modal"  id="myBook">
+    <div class="modal-dialog">
+      <div class="modal-content">
+  
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">{{title}}</h4>
+          <button type="button" class="close" (click)="closeModal()" data-dismiss="modal">&times;</button>
+        </div>
+  
+        <!-- Modal body -->
+        <div class="modal-body">
+          <div *ngIf="message" class="alert alert-success alert-dismissible">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <strong>Success!</strong> Your Record Add successfully.
+          </div>
+    
+          <form class="" id="book-form" [formGroup]="bookForm" (ngSubmit)="addBook()">
+            <div id="book-from-roup" class="form-group">
+              <input id="book-fname" name="name" class="form-control form-control-sm" placeholder="Name" formControlName="name">
+              <input id="book-address" name="isbn" class="form-control form-control-sm" placeholder="isbn" formControlName="isbn">
+              <input id="book-email" name="overview" class="form-control form-control-sm" placeholder="overview" formControlName="overview">
+              <input id="book-email" name="dateOfPublish" type="date" class="form-control form-control-sm" placeholder="dateOfPublish" formControlName="dateOfPublish">
+              <input id="book-email" name="dateOfReprint" type="date" class="form-control form-control-sm" placeholder="dateOfReprint" formControlName="dateOfReprint">              <input id="book-birthdate" name="contactPersonName"  class="form-control form-control-sm" placeholder="acknowledgement" formControlName="acknowledgement">
+              <input id="book-country" name="copyright" class="form-control form-control-sm" placeholder="copyright" formControlName="copyright">
+              <input id="book-bio" name="fact"class="form-control form-control-sm" placeholder="fact" formControlName="fact">
+              <input id="book-lname" name="printedBy" class="form-control form-control-sm" placeholder="printedBy" formControlName="printedBy">
+              <input id="book-back" name="coverDesigner"class="form-control form-control-sm" placeholder="coverDesigner" formControlName="coverDesigner">
+              <input id="book-nk" name="coverPhotoUrl" class="form-control form-control-sm" placeholder="coverPhotoUrl" formControlName="coverPhotoUrl">
+              <input id="book-nk" name="price" class="form-control form-control-sm" placeholder="price" formControlName="price">
+              
+              <ng-multiselect-dropdown formControlName="authors"
+              [placeholder]="'custom placeholder'"
+              
+              [data]="dropdownList"
+              [(ngModel)]="author"
+              [settings]="dropdownSettings"
+              
+            >
+            </ng-multiselect-dropdown>
+
+            <ng-multiselect-dropdown formControlName="publishers"
+            [placeholder]="'custom placeholder'"
+            
+            [data]="pubList"
+            [(ngModel)]="publisher"
+            [settings]="dropdownSettings"
+            
+          >
+          </ng-multiselect-dropdown>
+
+            <ng-multiselect-dropdown formControlName="tags"
+            [placeholder]="'custom placeholder'"
+            
+            [data]="tagList"
+            [(ngModel)]="tag"
+            [settings]="dropdownSettings"
+            
+          >
+          </ng-multiselect-dropdown>
+
+  
+            </div>
+            <button id="book-submit" color="info" class="btn btn-secondary" [disabled]="bookForm.invalid"  type="submit">{{btnTitle}}</button>
+  
+          </form>
+        </div>
+  
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger"(click)="closeModal()"  data-dismiss="modal">Close</button>
+        </div>
+  
+      </div>
+    </div>
+  </div>
  </div>
 </div>
 

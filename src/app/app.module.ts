@@ -18,6 +18,7 @@ import {AuthorService} from './services/author.service';
 import {BookService} from './services/book.service';
 import {PublisherService} from './services/publisher.service';
 import { CellRenderComponent } from './components/cell-render/cell-render.component'
+import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 
 
 
@@ -40,7 +41,9 @@ import { CellRenderComponent } from './components/cell-render/cell-render.compon
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    AgGridModule.withComponents([AuthorComponent])
+    AgGridModule.withComponents([AuthorComponent]),
+    NgMultiSelectDropDownModule.forRoot()
+
   ],
   providers: [AuthorService,ModalService,BookService,PublisherService],
   entryComponents:[CellRenderComponent],
