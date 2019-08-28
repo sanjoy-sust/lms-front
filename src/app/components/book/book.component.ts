@@ -17,7 +17,7 @@ export class BookComponent implements OnInit {
   btnTitle:string;
   message=false;
   bookForm:FormGroup;
-  authorUpdateid=null;
+  bookUpdateid=null;
   updateMsg=false;
   gridOptions:GridOptions;
   private gridApi;
@@ -61,7 +61,7 @@ export class BookComponent implements OnInit {
           var res =params.data.authors[i];
           if( res !== null && ( res.name !==null|| res.name !=='undefined'))
           {
-            ress +=res.name+", ";
+            ress +=res.name+"<br>";
           }
        }
        return ress;       
@@ -77,7 +77,7 @@ export class BookComponent implements OnInit {
          var res =params.data.publishers[i];
          if( res !== null && ( res.name !==null|| res.name !=='undefined'))
          {
-           ress +=res.name+", ";
+           ress +=res.name+"<br> ";
          }
       }
       return ress;       
@@ -93,7 +93,7 @@ export class BookComponent implements OnInit {
          var res =params.data.tags[i];
          if( res !== null && ( res.name !==null|| res.name !=='undefined'))
          {
-           ress +=res.name+", ";
+           ress +=res.name+"<br>";
          }
       }
       return ress;       
@@ -206,16 +206,60 @@ export class BookComponent implements OnInit {
     this.bookForm.reset();
    }
    createBook(book:Book){
-    if(this.authorUpdateid==null){
+    if(this.bookUpdateid==null){
      this.BkService.createBook(book).subscribe(
-       author=>{
+       book=>{
          this.message=true;
          this.getBook();
-         this.authorUpdateid=null;
+         this.bookUpdateid=null;
         }
      )
       }
+      else{
+        book.id=this.bookUpdateid;
+        this.BkService.updateBook(book).subscribe(
+          author=>{
+            this.updateMsg=true;
+            this.getBook();
+            
+          }
+        )
+      }
     }
+    bookEdit(items:any){
+
+      this.title="Edit Book";
+      this.btnTitle="Update"
+      var selectedData = this.gridApi.getSelectedRows();
+      var res = this.gridApi.updateRowData({ update: selectedData });
+      if(res.update.length>0){
+      var bookId = res.update[0].data.id;
+      this.BkService.getBookId(bookId).subscribe(
+        book=>{
+          this.bookUpdateid=bookId;  
+          this.bookForm.controls['name'].setValue(book.name);
+          this.bookForm.controls['isbn'].setValue(book.isbn);
+          this.bookForm.controls['overview'].setValue(book.overview);
+          this.bookForm.controls['dateOfPublish'].setValue(book.dateOfPublish);
+          this.bookForm.controls['dateOfReprint'].setValue(book.dateOfReprint);
+          this.bookForm.controls['acknowledgement'].setValue(book.acknowledgement);
+          this.bookForm.controls['copyright'].setValue(book.copyright);
+          this.bookForm.controls['fact'].setValue(book.fact);
+          this.bookForm.controls['printedBy'].setValue(book.printedBy);
+          this.bookForm.controls['coverDesigner'].setValue(book.coverDesigner);
+          this.bookForm.controls['coverPhotoUrl'].setValue(book.coverPhotoUrl);
+          this.bookForm.controls['price'].setValue(book.price);
+          this.bookForm.controls['authors'].setValue(book.authors);
+          this.bookForm.controls['publishers'].setValue(book.publishers);
+          this.bookForm.controls['tags'].setValue(book.tags);
+    
+        }
+      )
+    }
+  }
+  onItemDeSelect(items: any) {
+    console.log(items);
+  }
   onRemoveSelected() {
     var selectedData = this.gridApi.getSelectedRows();
     var res = this.gridApi.updateRowData({ remove: selectedData });

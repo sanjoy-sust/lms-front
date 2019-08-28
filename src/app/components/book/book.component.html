@@ -35,7 +35,7 @@ floatingFilter="true"
       <div class="col-md-6">
       <button (click)="addTitle()" data-toggle="modal" data-target="#myBook" class="bt-add"><img src="../../../assets/image/add.png" alt=""> Add</button>
       <button (click)="onRemoveSelected()"  [disabled]=""  class="bt-add"><img src="../../../assets/image/delete.gif" alt=""> Delete</button>
-      <button (click)="auhtorEdit()"  [disabled]="" data-toggle="modal" data-target="#myBook"   class="bt-add"><img src="../../../assets/image/edit.gif" alt=""> Edit</button>
+      <button (click)="bookEdit()"  [disabled]="" data-toggle="modal" data-target="#myBook"   class="bt-add"><img src="../../../assets/image/edit.gif" alt=""> Edit</button>
 
      </div>
      <div class="col-md-3"></div>
@@ -79,6 +79,7 @@ floatingFilter="true"
               [data]="dropdownList"
               [(ngModel)]="author"
               [settings]="dropdownSettings"
+              (onDeSelect)="onItemDeSelect($event)"
               
             >
             </ng-multiselect-dropdown>

@@ -35,9 +35,12 @@ export class BookService {
    }
  
    updateBook(Book:Book):Observable<number>{
-     return this.http.put<number>(this.bookUrl+Book.id,Book,this.httpOptions)
+     return this.http.put<number>(this.bookUrl,Book,this.httpOptions)
    }
    deleteBook(id:number){
      return this.http.delete(this.bookUrl+id)
+   }
+   getBookAuthId(authorsId:number){
+    return this.http.delete<Book>( 'http://localhost:10230/book/authors'+authorsId);
    }
 }
