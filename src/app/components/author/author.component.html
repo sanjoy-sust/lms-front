@@ -21,6 +21,7 @@ rowSelection= "multiple"
 [rowSelection]="rowSelection" 
 
 (gridReady)="onGridReady($event)" 
+(selectionChanged)="onSelectionChanged($event)"
 enableColResize 
 enableSorting 
 enableFilter="true"
@@ -34,8 +35,8 @@ floatingFilter="true"
       <div class="col-md-3"></div>
       <div class="col-md-6">
       <button (click)="addTitle()" data-toggle="modal" data-target="#myModal" class="bt-add"><img src="../../../assets/image/add.png" alt=""> Add</button>
-      <button (click)="onRemoveSelected()"  [disabled]=""  class="bt-add"><img src="../../../assets/image/delete.gif" alt=""> Delete</button>
-      <button (click)="auhtorEdit()"  [disabled]="" data-toggle="modal" data-target="#myModal"   class="bt-add"><img src="../../../assets/image/edit.gif" alt=""> Edit</button>
+      <button (click)="onRemoveSelected()"  [disabled]="!DisableBtn"  class="bt-add"><img src="../../../assets/image/delete.gif" alt=""> Delete</button>
+      <button (click)="auhtorEdit()"  [disabled]="!DisableBtn" data-toggle="modal" data-target="#myModal"   class="bt-add"><img src="../../../assets/image/edit.gif" alt=""> Edit</button>
 
      </div>
      <div class="col-md-3"></div>

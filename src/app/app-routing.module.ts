@@ -5,6 +5,9 @@ import {HomeComponent} from './components/home/home.component';
 import {PublisherComponent} from './components/publisher/publisher.component';
 import {BookComponent} from './components/book/book.component';
 import {LoginComponent} from './components/users/login/login.component';
+import {AllVideosComponent} from './components/all-videos/all-videos.component';
+import {VideoComponent} from './components/all-videos/video/video.component';
+import { Component } from 'ag-grid-community';
 
 
 const appRoutes: Routes = [
@@ -13,6 +16,9 @@ const appRoutes: Routes = [
   { path: 'book', component: BookComponent},
   { path: 'author', component:AuthorComponent},
   { path: 'home', component: HomeComponent},
+  { path:'allVideos',component:AllVideosComponent},
+
+  {path:'allVideos/:videoId',component:VideoComponent},
   { path: '', redirectTo: 'home', pathMatch: 'full'},
   ]
 

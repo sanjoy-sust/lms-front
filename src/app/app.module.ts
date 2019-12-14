@@ -19,6 +19,8 @@ import {BookService} from './services/book.service';
 import {PublisherService} from './services/publisher.service';
 import { CellRenderComponent } from './components/cell-render/cell-render.component'
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
+import { AllVideosComponent } from './components/all-videos/all-videos.component';
+import { VideoComponent, SafePipe } from './components/all-videos/video/video.component';
 
 
 
@@ -34,6 +36,9 @@ import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
     LoginComponent,
     ModalComponent,
     CellRenderComponent,
+    AllVideosComponent,
+    VideoComponent,
+    SafePipe
   ],
   imports: [
     BrowserModule,

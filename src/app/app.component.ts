@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'Libary Management System';
   isEdit: boolean=false;
+  isYoutube:boolean=false;
   now:number;
   constructor() {
       setInterval(() => {
@@ -17,5 +18,7 @@ export class AppComponent {
   toggleEdit(){
     this.isEdit= !this.isEdit;
   }
-
+  toggleYoutube(){
+    this.isYoutube=!this.isYoutube
+  }
 }

@@ -1,0 +1,24 @@
+<div class="row">
+  <div class="container">
+     <h2> All Video Tutorials</h2>
+  </div>
+</div>
+<hr>
+<div class="container" style="overflow-y:scroll;height: 470px" >
+<div class = "row" >
+      <div *ngIf=" allVideos$ | async as allVideos; else loading">
+        <div  *ngFor="let data of allVideos" style="float: left;text-overflow: ellipsis;" class = "col-sm-6 col-md-3">
+           <a href = "#" class = "thumbnail">
+              <img style="width:210px;height: 118px;" src = "{{data.thumbnailUrl}}" alt = "Generic placeholder thumbnail">
+           </a>
+           <div class="title">
+           <p style="display: -webkit-box;max-height: 3.2rem;-webkit-box-orient: vertical;overflow: hidden;text-overflow: ellipsis;-webkit-line-clamp: 2;line-height: 1.6rem;"><a [routerLink]="['/allVideos',data.videoId]" routerLinkActive="active" >{{data.title}}</a></p>
+          </div>
+        </div>
+      </div>
+      <ng-template #loading>
+        <div class="lds-roller" ><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>          
+      </ng-template>
+     </div>
+
+</div> 

@@ -39,7 +39,7 @@
             Management</p>
         </div>
         <ul id="main-sidenave">
-          <li id="main-adminMaster" (click)="toggleEdit()"><a href="#">Admin Master</a><i
+          <li id="main-adminMaster" (click)="toggleEdit()" style="color:white">Admin Master<i
               class="fa fa-angle-double-down"></i>
             <ul id="main-admin" *ngIf=isEdit>
               <li id="admin-staff"><img style="height:20px" src="../../../assets/image/teacher_icon.jpg" />&nbsp;<a id="staff"
@@ -50,9 +50,18 @@
   
             </ul>
           </li>
-          <li id="main-lMaster"><a id="lib-master" href="#">Library Master</a><i class="fa fa-angle-double-down"></i></li>
-          <li id="main-sInfo"> <a id="stu-info" href="#">Student Information</a><i class="fa fa-angle-double-down"></i>
-          </li>
+          <li id="main-adminMaster" (click)="toggleYoutube()" style="color:white">Youtube Videos<i
+            class="fa fa-angle-double-down"></i>
+          <ul id="main-admin" *ngIf=isYoutube>
+            <li id="admin-staff"><img style="height:20px" src="../../../assets/image/teacher_icon.jpg" />&nbsp;<a id="staff"
+              routerLink="/allVideos">Video Tutorials</a></li>
+            <li id=""><img style="height:20px" src="../../../assets/image/book.png" style="height:20px" />&nbsp;<a id=""  routerLink="/book">All channels</a></li>
+            <!-- <li id=""><img style="height:20px" src="../../../assets/image/promote.png" style="height:20px" />&nbsp;<a id=""  routerLink="/publisher">Publisher</a></li> -->
+
+
+          </ul>
+        </li>
+          <li id="main-master"> <a id="master" href="#">Student Information</a><i class="fa fa-angle-double-down"></i></li>
           <li id="main-master"> <a id="master" href="#">Masters</a><i class="fa fa-angle-double-down"></i></li>
           <li id="main-bReport"><a id="b-repo" href="#">Book Reports</a><i class="fa fa-angle-double-down"></i></li>
         </ul>

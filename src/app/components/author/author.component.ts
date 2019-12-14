@@ -15,6 +15,7 @@ import { GridOptions } from 'ag-grid-community';
 })
 export class AuthorComponent implements OnInit {
   title:string;
+  DisableBtn=false;
   btnTitle:string;
   message=false;
   authForm:FormGroup;
@@ -27,10 +28,10 @@ export class AuthorComponent implements OnInit {
   private rowSelection;
   constructor(private AtService:AuthorService,private form:FormBuilder ,private MdService:ModalService) 
   {
-  
+    
   }
   columnDefs = [
-    {headerName: 'Name', field: 'name',editable:true, sortable: true, headerCheckboxSelection: true,checkboxSelection: true },
+    {headerName: 'Name', field: 'name',editable:true, sortable: true, headerCheckboxSelection: true,checkboxSelection: true ,},
     {headerName: 'Email', field: 'email',editable:true, sortable: true },
     {headerName: 'Mobile', field: 'mobile',editable:true, sortable: true },
     {headerName: 'Address', field: 'address', sortable: true },
@@ -62,10 +63,10 @@ export class AuthorComponent implements OnInit {
         })
         
         this.getAuth()
-        this.rowSelection= "multiple"
-
+        this.rowSelection= "multiple";
+    
   }
- 
+  
   //all author data in get
    getAuth(){
 
@@ -75,6 +76,16 @@ export class AuthorComponent implements OnInit {
      this.gridApi=params.api
      this.gridColumnApi=params.columnApi
    }
+
+  
+  onSelectionChanged(event) {
+    var ResSelectedData = this.gridApi.getSelectedRows();
+    var resSelected= this.gridApi.updateRowData({ update: ResSelectedData  });
+    if(resSelected.update.length>0){
+      this.DisableBtn=true;
+    }
+    else this.DisableBtn=false;
+  }
    //store of create form data value and value pass in creatAuth() 
   addTitle(){;
     this.title="Add Author"
